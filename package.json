@@ -1,0 +1,35 @@
+{
+  "name": "setup-nomad",
+  "version": "0.0.1",
+  "description": "A GitHub Action to install a specific version of HashiCorp Nomad and add it to PATH.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && ncc build --no-cache",
+    "fmt": "prettier --write 'src/*.ts'",
+    "release": "release-it"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:endocrimes/setup-nomad.git"
+  },
+  "keywords": [
+    "github-actions",
+    "hashicorp",
+    "nomad"
+  ],
+  "author": "Danielle Lancashire <dani@builds.terrible.systems>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@actions/core": "^1.9.1",
+    "@actions/io": "^1.1.2",
+    "@actions/tool-cache": "^2.0.1",
+    "@hashicorp/js-releases": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.6",
+    "@vercel/ncc": "^0.34.0",
+    "prettier": "^2.7.1",
+    "release-it": "^15.6.0",
+    "typescript": "^4.7.4"
+  }
+}
