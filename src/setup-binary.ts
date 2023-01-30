@@ -35,11 +35,14 @@ export async function fetchBinary(versionSpec: string): Promise<string> {
   core.info(`Finding release that matches ${versionSpec}.`);
   let release = await hc.getRelease(BINARY_NAME, versionSpec, USER_AGENT);
 
-  const {version} = release;
+  core.info(`Found ${release}.`);
+
+  const version = release.version;
   let nameAndVersion = BINARY_NAME + ` ` + version;
-  let nameAndPlatform = BINARY_NAME + `_${osPlatform}`;
 
   core.info(`Found ${nameAndVersion}.`);
+
+  let nameAndPlatform = BINARY_NAME + `_${osPlatform}`;
 
   core.info(`Checking cache for ${nameAndVersion}.`);
 
